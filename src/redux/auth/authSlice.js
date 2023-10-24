@@ -15,22 +15,34 @@ const initialState = {
   error: null,
 };
 
+// const hadlePending = state => {
+//     state.isRefreshing = true;
+// };
+
+// const handleRejected = (state, action) => {
+//     state.isRefreshing = false;
+//     state.error = action.payload;
+// };
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   extraReducers: {
+    // [registration.pending]: hadlePending,
     [registration.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isAuthorized = true;
     },
-
+    // [registration.rejected]: handleRejected,
+    // [login.pending]: hadlePending,
     [login.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isAuthorized = true;
     },
-
+    // [login.rejected]: handleRejected,
+    // [logout.pending]: hadlePending,
     [logout.fulfilled](state) {
       state.user = { name: null, email: null };
       state.token = null;
@@ -38,7 +50,7 @@ const authSlice = createSlice({
       state.isRefreshing = false;
       state.error = null;
     },
-
+    // [logout.rejected]: handleRejected,
     [refreshCurrentUser.pending](state) {
       state.isRefreshing = true;
     },
