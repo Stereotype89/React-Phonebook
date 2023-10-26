@@ -37,11 +37,14 @@ export const LoginFormInput = styled.input`
   padding-right: 10px;
   height: 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: var(--input-box-shadow);
+  transition-duration: 250ms;
+  border-color: var(--input-active-color);
 
   &:focus {
     outline: 1px solid var(--global-green-color);
+    background-color: var(--input-active-color);
   }
 `;
 
@@ -51,11 +54,15 @@ export const LoginFormSubmitButton = styled.button`
   background-color: var(--global-white-color);
   border: none;
   border-radius: 5px;
-  box-shadow: var(--input-box-shadow);
   cursor: pointer;
+  transition-duration: 250ms;
+  box-shadow: var(--input-box-shadow);
 
+  &:hover {
+    color: white;
+    background-color: var(--button-color);
+  }
   &:active {
-    background-color: var(--global-green-color);
-    color: var(--global-white-color);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2) inset;
   }
 `;

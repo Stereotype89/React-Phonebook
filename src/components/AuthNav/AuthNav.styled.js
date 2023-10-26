@@ -10,9 +10,11 @@ export const Link = styled(NavLink)`
   text-decoration: none;
   font-weight: 700;
   cursor: pointer;
-  color: var(--font-color);
+  transition-duration: 350ms;
+  color: black;
 
-  &:active {
+  &:active,
+  &:hover {
     color: var(--global-white-color);
   }
 `;

@@ -12,20 +12,27 @@ export const StyledFooter = styled.footer`
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 40px;
-  background-color: #7c7c7c;
+  height: 30px;
+  background-color: var(--footer);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
 export const FooterText = styled.p`
-  font-weight: 500;
+  font-weight: 300;
+  color: var(--global-white-color);
+  transition-duration: 250ms;
+
+  &:hover {
+    color: var(--global-black-color);
+  }
 `;
 
 export const FooterLink = styled.a`
   text-decoration: none;
-  font-weight: 500;
-  color: var(--global-black-color);
+  font-weight: 400;
+  color: var(--global-white-color);
+  transition-duration: 250ms;
 
   &:hover {
-    color: var(--global-white-color);
+    color: var(--global-black-color);
   }
 `;
